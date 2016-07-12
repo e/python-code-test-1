@@ -57,11 +57,11 @@ WSGI_APPLICATION = 'testsite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'lecodetest',
         'USER': 'devuser',
         'PASSWORD': 'devpass',
-        'HOST': '127.0.0.1',
+        'HOST': '',
         'PORT': '',
     }
 }
@@ -84,3 +84,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+TEMPLATE_LOADERS = (
+'django.template.loaders.filesystem.Loader',
+'django.template.loaders.app_directories.Loader',
+)
